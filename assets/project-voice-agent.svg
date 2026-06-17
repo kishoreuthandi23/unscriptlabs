@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">AI Voice Agent visual</title>
+  <desc id="desc">Voice waves connected to an automation command center.</desc>
+  <defs>
+    <linearGradient id="g" x1="110" y1="90" x2="780" y2="480" gradientUnits="userSpaceOnUse"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient>
+    <radialGradient id="r" cx="48%" cy="42%" r="68%"><stop stop-color="#111827"/><stop offset="1" stop-color="#05070C"/></radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="560" rx="34" fill="url(#r)"/>
+  <g opacity=".45" stroke="#67E8F9">
+    <circle cx="450" cy="280" r="208" fill="none" stroke-opacity=".08"/>
+    <circle cx="450" cy="280" r="148" fill="none" stroke-opacity=".12"/>
+    <circle cx="450" cy="280" r="88" fill="none" stroke-opacity=".18"/>
+  </g>
+  <g transform="translate(338 114)" filter="url(#glow)">
+    <rect x="73" y="36" width="78" height="218" rx="39" fill="#0B1020" stroke="url(#g)" stroke-width="4"/>
+    <rect x="101" y="70" width="22" height="104" rx="11" fill="#67E8F9"/>
+    <path d="M42 166c0 90 140 90 140 0" fill="none" stroke="#A78BFA" stroke-width="16" stroke-linecap="round"/>
+    <path d="M112 254v55M66 309h92" stroke="#E5E7EB" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="11">
+    <path d="M145 284c28-60 54 60 82 0s54 60 82 0" stroke="#7C3AED"/>
+    <path d="M590 284c28-60 54 60 82 0s54 60 82 0" stroke="#06B6D4"/>
+    <path d="M226 374h96c42 0 56-58 98-58h64c42 0 58 58 100 58h94" stroke="url(#g)" stroke-opacity=".42"/>
+  </g>
+  <g transform="translate(92 92)">
+    <rect width="214" height="104" rx="20" fill="#0B1020" stroke="#fff" stroke-opacity=".12"/>
+    <circle cx="42" cy="52" r="16" fill="#06B6D4"/>
+    <path d="M76 38h94M76 66h58" stroke="#fff" stroke-opacity=".55" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(600 378)">
+    <rect width="210" height="92" rx="20" fill="#0B1020" stroke="#fff" stroke-opacity=".12"/>
+    <path d="M36 50h138" stroke="#67E8F9" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="174" cy="50" r="12" fill="#7C3AED"/>
+  </g>
+  <text x="54" y="512" fill="#E5E7EB" font-family="Inter, Arial" font-size="24" font-weight="700">Voice-Powered Automation</text>
+</svg>

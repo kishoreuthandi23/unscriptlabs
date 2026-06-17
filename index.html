@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UNSCRIPT LABS builds AI solutions, automation pipelines, and custom software for ambitious businesses in India."
+    />
+    <title>UNSCRIPT LABS | AI Solutions, Automation & Custom Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            colors: {
+              void: "#0A0A0F",
+              ink: "#0D1117",
+              violet: "#7C3AED",
+              cyan: "#06B6D4",
+            },
+            boxShadow: {
+              glow: "0 0 50px rgba(124,58,237,.22)",
+              cyan: "0 0 45px rgba(6,182,212,.18)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --line: rgba(255, 255, 255, 0.1);
+        --muted: rgba(229, 231, 235, 0.68);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 34rem),
+          radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.12), transparent 30rem),
+          #0a0a0f;
+        color: #f8fafc;
+        overflow-x: hidden;
+      }
+
+      .font-display {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .text-gradient {
+        background: linear-gradient(110deg, #a78bfa 0%, #67e8f9 52%, #ffffff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .gradient-border {
+        position: relative;
+        background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        z-index: -1;
+        border-radius: inherit;
+        background: transparent;
+        opacity: 0;
+        transition: opacity .25s ease;
+      }
+
+      .gradient-border:hover::before {
+        opacity: 0;
+      }
+
+      .glass-nav {
+        background: rgba(10, 10, 15, 0.58);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-solid {
+        background: rgba(10, 10, 15, 0.86);
+        box-shadow: 0 18px 48px rgba(0,0,0,.28);
+      }
+
+      .mesh-grid {
+        background-image:
+          linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: radial-gradient(circle at 50% 28%, black 0%, transparent 68%);
+      }
+
+      .card-hover {
+        transition: transform .25s ease, border-color .25s ease, background .25s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-4px);
+        border-color: rgba(148, 163, 184, 0.28);
+        background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.045));
+      }
+
+      .project-card {
+        cursor: pointer;
+      }
+
+      .project-card i {
+        color: #cbd5e1;
+      }
+
+      .project-card .project-link {
+        color: #cbd5e1;
+      }
+
+      .project-card:hover .project-link {
+        color: #ffffff;
+      }
+
+      .project-card:focus-visible {
+        outline: 2px solid rgba(103, 232, 249, 0.85);
+        outline-offset: 4px;
+      }
+
+      .chip {
+        border: 1px solid rgba(255,255,255,.11);
+        background: rgba(255,255,255,.055);
+      }
+
+      .btn-gradient {
+        background: rgba(15, 23, 42, 0.86);
+        border: 1px solid rgba(148, 163, 184, 0.26);
+        box-shadow: none;
+      }
+
+      .btn-gradient:hover {
+        background: rgba(30, 41, 59, 0.9);
+        border-color: rgba(226, 232, 240, 0.34);
+        filter: none;
+        transform: translateY(-1px);
+        box-shadow: none;
+      }
+
+      .ai-console {
+        background:
+          linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(2, 6, 23, 0.72)),
+          rgba(10, 10, 15, 0.78);
+        border-color: rgba(148, 163, 184, 0.18);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      }
+
+      .ai-console::before {
+        background: linear-gradient(135deg, rgba(124,58,237,.35), rgba(6,182,212,.24), transparent 62%);
+      }
+
+      .ai-panel {
+        border: 1px solid rgba(148, 163, 184, 0.14);
+        background: rgba(15, 23, 42, 0.48);
+      }
+
+      .btn-soft {
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: rgba(15, 23, 42, 0.48);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+      }
+
+      .btn-soft:hover {
+        border-color: rgba(148, 163, 184, 0.34);
+        background: rgba(30, 41, 59, 0.58);
+        transform: translateY(-1px);
+      }
+
+      .footer-contact-icon {
+        display: grid;
+        height: 2.25rem;
+        width: 2.25rem;
+        flex-shrink: 0;
+        place-items: center;
+        border-radius: 9999px;
+        border: 1px solid rgba(148, 163, 184, 0.16);
+        background:
+          linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(6, 182, 212, 0.11)),
+          rgba(15, 23, 42, 0.58);
+        color: #67e8f9;
+      }
+
+      .section-band {
+        border-top: 1px solid rgba(255,255,255,.08);
+        background:
+          linear-gradient(180deg, rgba(13,17,23,.78), rgba(10,10,15,.94)),
+          radial-gradient(circle at 20% 20%, rgba(124,58,237,.13), transparent 28rem);
+      }
+
+      #particleCanvas {
+        opacity: .72;
+      }
+
+      .modal-open {
+        overflow: hidden;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *, *::before, *::after {
+          animation-duration: .01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-body antialiased">
+    <nav id="navbar" class="glass-nav fixed inset-x-0 top-0 z-50 transition-all duration-300">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" class="flex items-center gap-3" aria-label="UNSCRIPT LABS home">
+          <span class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 p-1">
+            <img src="assets/unscript-logo.png" alt="UNSCRIPT LABS logo" class="h-full w-full rounded-lg object-cover" />
+          </span>
+          <span class="font-display text-lg font-bold tracking-wide text-white sm:text-xl">UNSCRIPT LABS</span>
+        </a>
+
+        <div class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+          <a class="transition hover:text-white" href="#services">Services</a>
+          <a class="transition hover:text-white" href="#products">Products</a>
+          <a class="transition hover:text-white" href="#internship">Careers</a>
+          <a class="transition hover:text-white" href="#about">About</a>
+          <a class="transition hover:text-white" href="#contact">Contact</a>
+        </div>
+
+        <div class="hidden items-center gap-3 md:flex">
+          <a href="#contact" class="btn-gradient rounded-full px-5 py-2.5 text-sm font-bold text-white transition">Get In Touch</a>
+        </div>
+
+        <button
+          id="menuButton"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white md:hidden"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <div id="mobileMenu" class="hidden border-t border-white/10 bg-void/95 px-4 pb-5 pt-2 md:hidden">
+        <div class="mx-auto grid max-w-7xl gap-1 text-sm font-semibold text-slate-200">
+          <a class="rounded-lg px-3 py-3 hover:bg-white/5" href="#services">Services</a>
+          <a class="rounded-lg px-3 py-3 hover:bg-white/5" href="#products">Products</a>
+          <a class="rounded-lg px-3 py-3 hover:bg-white/5" href="#internship">Careers</a>
+          <a class="rounded-lg px-3 py-3 hover:bg-white/5" href="#about">About</a>
+          <a class="rounded-lg px-3 py-3 hover:bg-white/5" href="#contact">Contact</a>
+          <a class="btn-gradient mt-3 rounded-full px-5 py-3 text-center font-bold text-white" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="home" class="relative isolate min-h-screen overflow-hidden pt-28">
+        <canvas id="particleCanvas" class="absolute inset-0 -z-20 h-full w-full"></canvas>
+        <div class="mesh-grid absolute inset-0 -z-10"></div>
+        <div class="absolute left-1/2 top-28 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-violet/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-void to-transparent"></div>
+
+        <div class="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.06fr_.94fr] lg:px-8">
+          <div data-aos="fade-up">
+            <div class="chip mb-6 inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.22em] text-cyan-100">
+              <span class="h-2 w-2 rounded-full bg-cyan"></span>
+              AI Systems From India
+            </div>
+            <h1 class="font-display max-w-5xl text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Building Intelligent Systems For A
+              <span class="text-gradient">Smarter Tomorrow</span>
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              We design and deploy AI solutions, automation pipelines, and custom software that transform how businesses operate.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3 text-base font-semibold text-slate-200">
+              <span class="text-slate-400">Engineering</span>
+              <span class="min-w-[10.5rem] text-gradient" id="typewriter">AI Solutions</span>
+            </div>
+            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href="#services" class="btn-gradient rounded-full px-7 py-4 text-center text-sm font-bold text-white transition">
+                Explore Our Services
+              </a>
+              <a href="#products" class="btn-soft rounded-full px-7 py-4 text-center text-sm font-bold text-white transition">
+                View Our Products
+              </a>
+            </div>
+          </div>
+
+          <div class="relative mx-auto w-full max-w-lg lg:max-w-none" data-aos="fade-left" data-aos-delay="140">
+            <div class="absolute inset-10 rounded-full bg-cyan/5 blur-3xl"></div>
+            <div class="ai-console gradient-border relative overflow-hidden rounded-2xl p-6">
+              <div class="mb-6 flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[.24em] text-slate-400">Live System</p>
+                  <h2 class="font-display mt-1 text-2xl font-bold">AI Operations Console</h2>
+                </div>
+                <span class="rounded-full border border-emerald-300/15 bg-emerald-400/8 px-3 py-1 text-xs font-bold text-emerald-300">Online</span>
+              </div>
+              <div class="grid gap-3">
+                <div class="ai-panel rounded-xl p-4">
+                  <div class="mb-3 flex items-center gap-3">
+                    <i data-lucide="bot" class="h-5 w-5 text-cyan"></i>
+                    <span class="font-semibold">Multi-agent workflow</span>
+                  </div>
+                  <div class="h-2 overflow-hidden rounded-full bg-white/8">
+                    <div class="h-full w-4/5 rounded-full bg-gradient-to-r from-violet/75 to-cyan/75"></div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="ai-panel rounded-xl p-4">
+                    <p class="text-3xl font-bold">42%</p>
+                    <p class="mt-1 text-sm text-slate-400">Faster handling</p>
+                  </div>
+                  <div class="ai-panel rounded-xl p-4">
+                    <p class="text-3xl font-bold">24/7</p>
+                    <p class="mt-1 text-sm text-slate-400">AI availability</p>
+                  </div>
+                </div>
+                <div class="ai-panel rounded-xl p-4">
+                  <div class="flex items-center justify-between text-sm text-slate-300">
+                    <span>RAG retrieval</span>
+                    <span>Computer vision</span>
+                    <span>Voice AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-band py-24 sm:py-28">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl" data-aos="fade-up">
+            <p class="text-sm font-bold uppercase tracking-[.24em] text-cyan">Services</p>
+            <h2 class="font-display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">AI-native execution, from idea to production.</h2>
+          </div>
+          <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <article class="gradient-border card-hover rounded-2xl p-6" data-aos="fade-up">
+              <i data-lucide="brain-circuit" class="mb-7 h-9 w-9 text-cyan"></i>
+              <h3 class="font-display text-xl font-bold">AI Solutions</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                Generative AI apps, AI assistants, AI chatbots, AI voice agents, RAG systems, document intelligence, computer vision, multi-agent systems, and custom AI models.
+              </p>
+            </article>
+            <article class="gradient-border card-hover rounded-2xl p-6" data-aos="fade-up" data-aos-delay="80">
+              <i data-lucide="workflow" class="mb-7 h-9 w-9 text-cyan"></i>
+              <h3 class="font-display text-xl font-bold">Automation Solutions</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                Intelligent process automation, workflow automation, and RPA integration that remove repetitive work and accelerate operations.
+              </p>
+            </article>
+            <article class="gradient-border card-hover rounded-2xl p-6" data-aos="fade-up" data-aos-delay="160">
+              <i data-lucide="code-2" class="mb-7 h-9 w-9 text-cyan"></i>
+              <h3 class="font-display text-xl font-bold">Custom Software Development</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                End-to-end product development for scalable web and mobile applications, internal tools, dashboards, and robust cloud-ready platforms.
+              </p>
+            </article>
+            <article class="gradient-border card-hover rounded-2xl p-6" data-aos="fade-up" data-aos-delay="240">
+              <i data-lucide="flask-conical" class="mb-7 h-9 w-9 text-cyan"></i>
+              <h3 class="font-display text-xl font-bold">Research & Innovation</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-300">
+                Cutting-edge R&D, experimental AI systems, emerging technology prototyping, and proof-of-concept builds for ambitious teams.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="bg-void py-24 sm:py-28">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl" data-aos="fade-up">
+            <p class="text-sm font-bold uppercase tracking-[.24em] text-cyan">Products</p>
+            <h2 class="font-display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">What We've Built</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              Production-minded AI products, crafted for speed, clarity, and measurable business value.
+            </p>
+          </div>
+          <div class="mt-12 grid gap-5 md:grid-cols-2">
+            <article class="project-card gradient-border card-hover rounded-2xl p-5" data-project="teacher" role="button" tabindex="0" data-aos="zoom-in" aria-label="Open AI Teacher Robot project overview">
+              <i data-lucide="graduation-cap" class="h-9 w-9"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">AI Teacher Robot</h3>
+              <p class="mt-3 text-slate-300">Voice-interactive AI teaching assistant with real-time STT and TTS.</p>
+              <span class="project-link mt-6 inline-flex items-center gap-2 text-sm font-bold">Learn More <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </article>
+            <article class="project-card gradient-border card-hover rounded-2xl p-5" data-project="voice" role="button" tabindex="0" data-aos="zoom-in" data-aos-delay="80" aria-label="Open AI Voice Agent project overview">
+              <i data-lucide="audio-lines" class="h-9 w-9"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">AI Voice Agent</h3>
+              <p class="mt-3 text-slate-300">Intelligent voice-powered automation agent for support, qualification, and operations.</p>
+              <span class="project-link mt-6 inline-flex items-center gap-2 text-sm font-bold">Learn More <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </article>
+            <article class="project-card gradient-border card-hover rounded-2xl p-5" data-project="rag" role="button" tabindex="0" data-aos="zoom-in" data-aos-delay="160" aria-label="Open RAG Chatbot project overview">
+              <i data-lucide="book-open-text" class="h-9 w-9"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">RAG Chatbot</h3>
+              <p class="mt-3 text-slate-300">Document-aware chatbot using Retrieval-Augmented Generation for grounded answers.</p>
+              <span class="project-link mt-6 inline-flex items-center gap-2 text-sm font-bold">Learn More <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </article>
+            <article class="project-card gradient-border card-hover rounded-2xl p-5" data-project="face" role="button" tabindex="0" data-aos="zoom-in" data-aos-delay="240" aria-label="Open Face Recognition Attendance System project overview">
+              <i data-lucide="scan-face" class="h-9 w-9"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">Face Recognition Attendance System</h3>
+              <p class="mt-3 text-slate-300">Automated attendance using computer vision and identity recognition workflows.</p>
+              <span class="project-link mt-6 inline-flex items-center gap-2 text-sm font-bold">Learn More <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="internship" class="section-band py-24 sm:py-28">
+        <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[.88fr_1.12fr] lg:px-8">
+          <div data-aos="fade-right">
+            <p class="text-sm font-bold uppercase tracking-[.24em] text-cyan">Internship</p>
+            <h2 class="font-display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Launch Your AI Career With Us</h2>
+            <p class="mt-5 text-lg leading-8 text-slate-300">
+              Gain real-world experience building AI systems alongside industry professionals.
+            </p>
+            <a href="#contact" class="btn-gradient mt-8 inline-flex rounded-full px-7 py-4 text-sm font-bold text-white transition">Apply for Internship</a>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2" data-aos="fade-left">
+            <div class="gradient-border rounded-2xl p-5"><i data-lucide="check-circle-2" class="mb-4 h-6 w-6 text-cyan"></i><p class="font-bold">Hands-On AI Development</p></div>
+            <div class="gradient-border rounded-2xl p-5"><i data-lucide="briefcase-business" class="mb-4 h-6 w-6 text-cyan"></i><p class="font-bold">Real Industry Projects</p></div>
+            <div class="gradient-border rounded-2xl p-5">
+              <svg class="mb-4 h-6 w-6 text-cyan" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.13v3.14c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+              </svg>
+              <p class="font-bold">GitHub Portfolio</p>
+            </div>
+            <div class="gradient-border rounded-2xl p-5"><i data-lucide="messages-square" class="mb-4 h-6 w-6 text-cyan"></i><p class="font-bold">Technical Mentorship</p></div>
+            <div class="gradient-border rounded-2xl p-5"><i data-lucide="award" class="mb-4 h-6 w-6 text-cyan"></i><p class="font-bold">Internship Certificate</p></div>
+            <div class="gradient-border rounded-2xl p-5"><i data-lucide="badge-check" class="mb-4 h-6 w-6 text-cyan"></i><p class="font-bold">Project Certificate</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="bg-void py-24 sm:py-28">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl" data-aos="fade-up">
+            <p class="text-sm font-bold uppercase tracking-[.24em] text-cyan">About Us</p>
+            <h2 class="font-display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Built for teams that need intelligent systems, not slide decks.</h2>
+          </div>
+          <div class="mt-12 grid gap-5 md:grid-cols-3">
+            <article class="gradient-border card-hover rounded-2xl p-7" data-aos="fade-up">
+              <i data-lucide="rocket" class="h-9 w-9 text-cyan"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">Cutting-Edge Tech Stack</h3>
+              <p class="mt-4 leading-7 text-slate-300">Modern AI tooling, cloud-native architecture, and automation platforms selected for practical performance.</p>
+            </article>
+            <article class="gradient-border card-hover rounded-2xl p-7" data-aos="fade-up" data-aos-delay="90">
+              <i data-lucide="target" class="h-9 w-9 text-cyan"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">Real-World Impact</h3>
+              <p class="mt-4 leading-7 text-slate-300">We build around measurable outcomes: faster workflows, sharper decisions, better user experiences.</p>
+            </article>
+            <article class="gradient-border card-hover rounded-2xl p-7" data-aos="fade-up" data-aos-delay="180">
+              <i data-lucide="handshake" class="h-9 w-9 text-cyan"></i>
+              <h3 class="font-display mt-6 text-2xl font-bold">End-to-End Partnership</h3>
+              <p class="mt-4 leading-7 text-slate-300">From discovery to deployment, we stay close to your team and ship systems that keep improving.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-band py-24 sm:py-28">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
+          <div data-aos="fade-right">
+            <p class="text-sm font-bold uppercase tracking-[.24em] text-cyan">Contact</p>
+            <h2 class="font-display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Have a project in mind? Let's build it.</h2>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+              Tell us what you want to automate, launch, or reinvent. We will help turn it into a working system.
+            </p>
+          </div>
+          <form class="gradient-border rounded-2xl p-6 sm:p-8" data-aos="fade-left">
+            <div class="grid gap-5">
+              <label class="grid gap-2">
+                <span class="text-sm font-semibold text-slate-300">Name</span>
+                <input class="rounded-xl border border-white/10 bg-black/24 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60" type="text" name="name" placeholder="Your name" />
+              </label>
+              <label class="grid gap-2">
+                <span class="text-sm font-semibold text-slate-300">Email</span>
+                <input class="rounded-xl border border-white/10 bg-black/24 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60" type="email" name="email" placeholder="you@example.com" />
+              </label>
+              <label class="grid gap-2">
+                <span class="text-sm font-semibold text-slate-300">Phone Number</span>
+                <input class="rounded-xl border border-white/10 bg-black/24 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60" type="tel" name="phone" placeholder="+91 98765 43210" />
+              </label>
+              <label class="grid gap-2">
+                <span class="text-sm font-semibold text-slate-300">Message</span>
+                <textarea class="min-h-36 rounded-xl border border-white/10 bg-black/24 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60" name="message" placeholder="Tell us about your project"></textarea>
+              </label>
+              <button type="submit" class="btn-gradient rounded-full px-7 py-4 text-sm font-bold text-white transition">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div
+      id="projectModal"
+      class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/75 px-4 py-6 backdrop-blur-md"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="projectModalTitle"
+    >
+      <div class="absolute inset-0" data-modal-close></div>
+      <div class="gradient-border relative max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-2xl">
+        <button
+          id="projectModalClose"
+          class="absolute right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-black/45 text-white transition hover:border-cyan/40 hover:bg-white/10"
+          type="button"
+          aria-label="Close project overview"
+        >
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+        <div class="grid max-h-[92vh] overflow-y-auto bg-[#070A10]/95 lg:grid-cols-[1.05fr_.95fr]">
+          <div class="border-b border-white/10 bg-white/[.025] p-5 lg:border-b-0 lg:border-r">
+            <img id="projectModalImage" src="" alt="" class="aspect-[16/10] w-full rounded-xl border border-white/10 bg-black/35 object-contain" />
+          </div>
+          <div class="p-6 sm:p-8">
+            <p id="projectModalKicker" class="text-sm font-bold uppercase tracking-[.22em] text-cyan">Project Overview</p>
+            <h2 id="projectModalTitle" class="font-display mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl"></h2>
+            <p id="projectModalDescription" class="mt-4 text-base leading-8 text-slate-300"></p>
+            <div class="mt-6 grid gap-3" id="projectModalHighlights"></div>
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href="#contact" id="projectModalCta" class="btn-gradient rounded-full px-6 py-3 text-center text-sm font-bold text-white transition">Discuss This Project</a>
+              <button type="button" data-modal-close class="btn-soft rounded-full px-6 py-3 text-sm font-bold text-white transition">
+                Back to Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="border-t border-white/10 bg-black/30 py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-[1.35fr_.8fr_1fr] md:items-start">
+          <div>
+            <a href="#home" class="flex items-start gap-3">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 p-1">
+                <img src="assets/unscript-logo.png" alt="UNSCRIPT LABS logo" class="h-full w-full rounded-lg object-cover" />
+              </span>
+              <span>
+                <span class="font-display block text-lg font-bold">UNSCRIPT LABS</span>
+                <span class="text-sm text-slate-400">AI solutions, automation, and custom software.</span>
+              </span>
+            </a>
+            <div class="mt-6 flex gap-3">
+              <a href="#" aria-label="GitHub" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:border-cyan/40 hover:text-white">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.13v3.14c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:border-cyan/40 hover:text-white">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8h4v15h-4V8Zm7.5 0h3.84v2.05h.06c.53-1.01 1.84-2.07 3.79-2.07 4.05 0 4.81 2.67 4.81 6.14V23h-4v-7.87c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16V23h-4V8Z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:border-cyan/40 hover:text-white">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.9 2h3.68l-8.04 9.18L24 22h-7.4l-5.8-7.58L4.17 22H.49l8.6-9.83L0 2h7.58l5.24 6.93L18.9 2Zm-1.29 18.1h2.04L6.47 3.8H4.28L17.6 20.1Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-display text-sm font-bold uppercase tracking-[.18em] text-white">Quick Access</h3>
+            <div class="mt-4 grid gap-3 text-sm font-semibold text-slate-300">
+              <a href="#home" class="transition hover:text-white">Home</a>
+              <a href="#products" class="transition hover:text-white">Products</a>
+              <a href="#services" class="transition hover:text-white">Services</a>
+              <a href="#internship" class="transition hover:text-white">Careers</a>
+              <a href="#about" class="transition hover:text-white">About Us</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-display text-sm font-bold uppercase tracking-[.18em] text-white">Contact Us</h3>
+            <div class="mt-4 grid gap-4 text-sm font-semibold text-slate-300">
+              <a href="tel:+918438714078" class="flex items-start gap-3 transition hover:text-white">
+                <span class="footer-contact-icon">
+                  <i data-lucide="phone" class="h-4 w-4"></i>
+                </span>
+                <span>
+                  <span class="block text-white">+91 84387 14078</span>
+                  <span class="block text-xs text-slate-500">Call us</span>
+                </span>
+              </a>
+              <a href="mailto:unscript.labs@gmail.com" class="flex items-start gap-3 transition hover:text-white">
+                <span class="footer-contact-icon">
+                  <i data-lucide="mail" class="h-4 w-4"></i>
+                </span>
+                <span>
+                  <span class="block text-white">unscript.labs@gmail.com</span>
+                  <span class="block text-xs text-slate-500">Email us</span>
+                </span>
+              </a>
+              <a href="#contact" class="flex items-start gap-3 transition hover:text-white">
+                <span class="footer-contact-icon">
+                  <i data-lucide="map-pin" class="h-4 w-4"></i>
+                </span>
+                <span class="max-w-sm leading-6 text-white">
+                  2/138 Chintamani Nagar, Illango Nagar, Krishnarayapuram, Illango Nagar, Coimbatore, Tamil Nadu, 641006, India
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <p class="mt-10 text-sm text-slate-500">&copy; 2026 Unscript Labs. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+      const navbar = document.getElementById("navbar");
+      const menuButton = document.getElementById("menuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const projectModal = document.getElementById("projectModal");
+      const projectModalClose = document.getElementById("projectModalClose");
+      const projectModalImage = document.getElementById("projectModalImage");
+      const projectModalTitle = document.getElementById("projectModalTitle");
+      const projectModalKicker = document.getElementById("projectModalKicker");
+      const projectModalDescription = document.getElementById("projectModalDescription");
+      const projectModalHighlights = document.getElementById("projectModalHighlights");
+      const projectModalCta = document.getElementById("projectModalCta");
+
+      const projectDetails = {
+        teacher: {
+          kicker: "AI Education System",
+          title: "AI Teacher Robot",
+          image: "assets/project-ai-teacher.jpg",
+          imageAlt: "AI Teacher Robot project visual",
+          description:
+            "A voice-interactive teaching assistant that listens to student questions, understands lesson context, and responds with natural speech. The system combines real-time speech-to-text, language intelligence, and text-to-speech to make classroom learning more interactive.",
+          highlights: [
+            "Real-time STT and TTS conversation flow",
+            "Lesson-aware question answering and explanations",
+            "Useful for classrooms, labs, demos, and AI education programs",
+          ],
+        },
+        voice: {
+          kicker: "Voice Automation System",
+          title: "AI Voice Agent",
+          image: "assets/project-voice-agent.png",
+          imageAlt: "AI Voice Agent project visual",
+          description:
+            "A voice-powered automation agent for handling calls, collecting information, qualifying leads, and triggering business workflows. It is designed to reduce manual follow-ups while keeping conversations fast and natural.",
+          highlights: [
+            "Voice-first support and operations automation",
+            "Can connect with CRMs, forms, calendars, and internal tools",
+            "Ideal for customer support, appointment booking, and lead handling",
+          ],
+        },
+        rag: {
+          kicker: "Knowledge AI System",
+          title: "RAG Chatbot",
+          image: "assets/project-rag-chatbot.jpg",
+          imageAlt: "RAG Chatbot project visual",
+          description:
+            "A document-aware chatbot that retrieves the most relevant information from uploaded files and answers with grounded context. It helps teams search policies, manuals, reports, PDFs, and internal knowledge bases without losing accuracy.",
+          highlights: [
+            "Retrieval-Augmented Generation for grounded answers",
+            "Works with PDFs, documents, FAQs, and knowledge bases",
+            "Great for support portals, internal teams, and student resources",
+          ],
+        },
+        face: {
+          kicker: "Computer Vision System",
+          title: "Face Recognition Attendance System",
+          image: "assets/project-face-attendance.png",
+          imageAlt: "Face Recognition Attendance System project visual",
+          description:
+            "An automated attendance system that uses computer vision to identify faces and record presence with minimal manual effort. It can support classrooms, training centers, offices, and controlled-access environments.",
+          highlights: [
+            "Face detection, recognition, and attendance logging",
+            "Dashboard-ready records for daily attendance tracking",
+            "Reduces manual entry and improves reporting speed",
+          ],
+        },
+      };
+
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("nav-solid", window.scrollY > 20);
+      });
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      function openProjectModal(projectKey) {
+        const project = projectDetails[projectKey];
+        if (!project) return;
+
+        projectModalKicker.textContent = project.kicker;
+        projectModalTitle.textContent = project.title;
+        projectModalDescription.textContent = project.description;
+        projectModalImage.src = project.image;
+        projectModalImage.alt = project.imageAlt;
+        projectModalHighlights.innerHTML = project.highlights
+          .map(
+            (item) => `
+              <div class="flex gap-3 rounded-xl border border-white/10 bg-white/[.045] p-4">
+                <i data-lucide="sparkles" class="mt-0.5 h-5 w-5 shrink-0 text-cyan"></i>
+                <p class="text-sm leading-6 text-slate-300">${item}</p>
+              </div>
+            `
+          )
+          .join("");
+
+        projectModal.classList.remove("hidden");
+        projectModal.classList.add("flex");
+        document.body.classList.add("modal-open");
+        lucide.createIcons();
+        projectModalClose.focus();
+      }
+
+      function closeProjectModal() {
+        projectModal.classList.add("hidden");
+        projectModal.classList.remove("flex");
+        document.body.classList.remove("modal-open");
+      }
+
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("click", () => openProjectModal(card.dataset.project));
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openProjectModal(card.dataset.project);
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-modal-close]").forEach((element) => {
+        element.addEventListener("click", closeProjectModal);
+      });
+
+      projectModalCta.addEventListener("click", closeProjectModal);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !projectModal.classList.contains("hidden")) {
+          closeProjectModal();
+        }
+      });
+
+      const words = ["AI Solutions", "Automation", "Custom Software", "The Future"];
+      const typewriter = document.getElementById("typewriter");
+      let wordIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      function typeLoop() {
+        const word = words[wordIndex];
+        typewriter.textContent = word.slice(0, charIndex);
+        if (!deleting && charIndex < word.length) {
+          charIndex++;
+          setTimeout(typeLoop, 82);
+          return;
+        }
+        if (!deleting && charIndex === word.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1200);
+          return;
+        }
+        if (deleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(typeLoop, 42);
+          return;
+        }
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeLoop, 220);
+      }
+
+      function initParticles() {
+        const canvas = document.getElementById("particleCanvas");
+        const ctx = canvas.getContext("2d");
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let width;
+        let height;
+        let particles = [];
+
+        function resize() {
+          width = canvas.width = window.innerWidth * window.devicePixelRatio;
+          height = canvas.height = window.innerHeight * window.devicePixelRatio;
+          canvas.style.width = `${window.innerWidth}px`;
+          canvas.style.height = `${window.innerHeight}px`;
+          const count = Math.min(95, Math.floor(window.innerWidth / 16));
+          particles = Array.from({ length: count }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.34 * window.devicePixelRatio,
+            vy: (Math.random() - 0.5) * 0.34 * window.devicePixelRatio,
+            r: (Math.random() * 1.7 + 0.8) * window.devicePixelRatio,
+          }));
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, width, height);
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            if (!prefersReduced) {
+              p.x += p.vx;
+              p.y += p.vy;
+              if (p.x < 0 || p.x > width) p.vx *= -1;
+              if (p.y < 0 || p.y > height) p.vy *= -1;
+            }
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(103, 232, 249, .62)";
+            ctx.fill();
+
+            for (let j = i + 1; j < particles.length; j++) {
+              const q = particles[j];
+              const dx = p.x - q.x;
+              const dy = p.y - q.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              const max = 155 * window.devicePixelRatio;
+              if (distance < max) {
+                const alpha = (1 - distance / max) * 0.22;
+                ctx.strokeStyle = `rgba(124, 58, 237, ${alpha})`;
+                ctx.lineWidth = window.devicePixelRatio;
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(q.x, q.y);
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(draw);
+        }
+
+        resize();
+        draw();
+        window.addEventListener("resize", resize);
+      }
+
+      window.addEventListener("load", () => {
+        AOS.init({ duration: 800, once: true, offset: 80 });
+        lucide.createIcons();
+        typeLoop();
+        initParticles();
+      });
+    </script>
+  </body>
+</html>
